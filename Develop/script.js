@@ -3,12 +3,20 @@ var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
   // array of special characters
-  var specialCharacters = ["#", "@", "!", "*","&"];
-  console.log(specialCharacters);
-  console.log(specialCharacters[4]);
+  var specialCharacters = ["#", "@", "!", "*","&", "$", "%", "+"];
+
+  //  let sc = specialCharacters.length;  
+
+  // for (let i = 0; i < sc; i++) {
+  //   text += ""
+
+  //  }
+
+   // 
+  
 
   // array of numbers
-  var numbers = ["1", "2", "3"];
+  var numbers = ["1", "2", "3", "4", "5", "6"];
   console.log(numbers);
   console.log(numbers[2]);
 
@@ -21,11 +29,25 @@ function generatePassword() {
   console.log(upperCaseLetters);
 
   // empty array of characters
-  var emptyCharacters = [""];
+  var emptyCharacters = [];
   console.log(emptyCharacters);
 
   //ask the user how many characters
   var howManyCharacters = window.prompt("how many characters you want to include in this password?");
+  // answers from window.promt is always of datatype STRING
+
+  // parseInt converts a STRING datatype to an number data type
+  // "10" ---> 10
+  // "10" + "11" = "1011"
+  // 10 + 11 = 21
+
+  // check if the answer is a number
+  
+
+  // checks if number is within range
+  while(parseInt(howManyCharacters) < 8 || parseInt(howManyCharacters)  > 128) {
+    howManyCharacters = window.prompt("how many characters you want to include in this password?");
+  }
 
 
   //ask the user if they want numbers
@@ -41,21 +63,54 @@ function generatePassword() {
   var anyLowerCaseLetters = window.confirm("Would you like to include any lower case letters?");
 
   // if numbers, append numbers to character array
+  if (anyNumbers) {
+    emptyCharacters = emptyCharacters.concat(numbers);
+  }
+  
 
   // if sc, append special characters to character array
 
+  if (anySpecialCharacters) {
+    emptyCharacters = emptyCharacters.concat(specialCharacters)
+  }
+
   // if ul, append upper case letetrs to characters array
+
 
   // if ll, append lowercase letters
 
+
   //generate the password
+  console.log(emptyCharacters);
+
+
+  var randomCharacters = "";
   
   //repeat based on number of desired characters
+  // howManyCharacters
+  for (let index = 0; index < howManyCharacters; index++) {
+    
+    //add random character from character array to password
+    var randomNumber= Math.floor(Math.random() * emptyCharacters.length); /// random number between 0 -> 1 ... 0.12431231, 0.97457654, 0.9999999
+    // 1.36  -> 1
+    // 10.7  --> 10
+    // 10.9999999999 --> 10
+    // 0 - 10
 
-  //add random character from character array to password
-  Math.floor(Math.random() * 21) + 40;
+    var randomChara = emptyCharacters[randomNumber]
+
+    randomCharacters += randomChara;
+  }
+
+  console.log(randomCharacters)
+  
+
+
+
+
 
   //return the password
+  return randomCharacters;
 }
 
 // Write password to the #password input
@@ -68,3 +123,6 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+
+
