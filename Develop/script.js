@@ -27,7 +27,16 @@ function generatePassword() {
 
 
   //ask the user how many characters
-  var howManyCharacters = window.prompt("how many characters you want to include in this password? ENTER a number from 8 to 125");
+  var howManyCharacters = window.prompt("How many characters you want to include in this password?");
+
+  // switch (howManyCharacters) {
+  //   default:
+  //     window.alert("You did not pick a valid option. Try again.");
+  //     generatePassword();
+  //     break;
+  // }
+
+
   // answers from window.promt is always of datatype STRING
 
   // parseInt converts a STRING datatype to an number data type
@@ -36,12 +45,18 @@ function generatePassword() {
   // 10 + 11 = 21
 
   // check if the answer is a number - TUTOR!!!
-  
+  if (howManyCharacters === "" || howManyCharacters === null) { // must find a code to prevent strings
+    window.alert("You need to ENTER a Number from 8 to 125!");
+    // use return to call it again and stop the rest of this function from running
+    return generatePassword();
+  }   
 
+  
+  
 
   // checks if number is within range
   while(parseInt(howManyCharacters) < 8 || parseInt(howManyCharacters)  > 128) {
-    howManyCharacters = window.prompt("how many characters you want to include in this password?");
+    howManyCharacters = window.prompt("Please ENTER a number from 8 to 128!");
   }
 
 
@@ -58,7 +73,7 @@ function generatePassword() {
 
 
   //ask the user if they want numbers
-  var anyNumbers = window.confirm("would you like to include any numbers?");
+  var anyNumbers = window.confirm("Would you like to include any numbers?");
 
   //ask the user if they want special characters
   var anySpecialCharacters = window.confirm("Would you like to include any Special Characters?");
