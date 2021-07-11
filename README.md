@@ -11,7 +11,7 @@ This is a website that generates a random password at the request of the user. U
 ## Website
 
 ```
-website
+https://walterlaw19.github.io/Password-generator/
 ```
 
 ![](Readme-images/screenshot1.PNG) "Screenshot1"

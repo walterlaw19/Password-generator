@@ -29,7 +29,7 @@ function generatePassword() {
 
   // checks if number is within range
   while(parseInt(howManyCharacters) < 8 || parseInt(howManyCharacters)  > 128) {
-    howManyCharacters = window.prompt("Please ENTER a number from 8 to 128!");
+    howManyCharacters = window.alert("Please ENTER a number from 8 to 128!");
     return generatePassword();
   }
 
