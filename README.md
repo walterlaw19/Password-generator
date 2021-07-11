@@ -10,9 +10,9 @@ This is a website that generates a random password at the request of the user. U
 
 ## Website
 
-```
 https://walterlaw19.github.io/Password-generator/
-```
+
+## Screenshots
 
 ![](Readme-images/screenshot1.PNG) "Screenshot1"
 ![](Readme-images/screenshot2.PNG) "Screenshot2"
@@ -21,7 +21,7 @@ https://walterlaw19.github.io/Password-generator/
 
 ## contribution
 ```
-Made with ❤️️ by Walter G
+Made by by Walter G
 ```
 
 ---
